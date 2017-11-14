@@ -1,0 +1,165 @@
+/* jssor slider loading skin spin css */
+.jssorl-009-spin img {
+	animation-name: jssorl-009-spin;
+	animation-duration: 1.6s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes jssorl-009-spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+.jssorb053 .i {
+	position: absolute;
+	cursor: pointer;
+	width:16px;
+	height:16px;
+}
+
+.jssorb053 .i .b {
+	fill: #fff;
+	fill-opacity: 0.5;
+}
+
+.jssorb053 .i:hover .b {
+	fill-opacity: .7;
+}
+
+.jssorb053 .iav .b {
+	fill-opacity: 1;
+}
+
+.jssorb053 .i.idn {
+	opacity: .3;
+}
+
+.jssora093 {
+	display: block;
+	position: absolute;
+	cursor: pointer;
+}
+
+.jssora093 .c {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 400;
+	stroke-miterlimit: 10;
+}
+
+.jssora093 .a {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 400;
+	stroke-miterlimit: 10;
+}
+
+.jssora093:hover {
+	opacity: .8;
+}
+
+.jssora093.jssora093dn {
+	opacity: .6;
+}
+
+.jssora093.jssora093ds {
+	opacity: .3;
+	pointer-events: none;
+}
+
+#jssor_1 {
+	position:relative;
+	margin:0 auto;
+	top:0px;
+	left:0px;
+	width:980px;
+	height:380px;
+	overflow:hidden;
+	visibility:hidden;
+}
+.jssorl-009-spin {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	text-align:center;
+	background-color:rgba(0,0,0,0.7);
+}
+.jssor-loader {
+	margin-top:-19px;
+	position:relative;
+	top:50%;
+	width:38px;
+	height:38px;
+}
+.jssor-imgs-container {
+	cursor:default;
+	position:relative;
+	top:0px;
+	left:0px;
+	width:980px;
+	height:380px;
+	overflow:hidden;
+}
+.jssorb053 {
+	position:absolute;
+	bottom:12px;
+	right:12px;
+}
+.jssor-viewbox {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.jssor-arrowLeft {
+	width:50px;
+	height:50px;
+	top:0px;
+	left:30px;
+}
+.jssor-arrw {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.jssor-arrowRight {
+	width:50px;
+	height:50px;
+	top:0px;
+	right:30px;
+}
+.jssorb101 .i {
+position:absolute;
+cursor:pointer;
+}
+.jssorb101 .i .ci {fill:#000;}
+.jssorb101 .i .co {
+fill:#fff;
+opacity:.3;
+}
+.jssorb101 .i:hover .co {
+fill:#ff9933;
+opacity: 1;
+}
+.jssorb101 .i:hover .ci {fill:#fff;}
+.jssorb101 .iav .ci {
+fill:#fff;
+stroke-width:0;
+}
+.jssorb101 .iav .co {
+fill:#46d1d3;
+opacity: 1;
+}
+.jssorb101 .i.idn {opacity:.3;}
