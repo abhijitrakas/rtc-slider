@@ -56,10 +56,7 @@ class Rtc_Slider_Query {
 	public function get_file_url( $file_path ) {
 		$full_url = '';
 		if ( $file_path ) {
-			$full_url = plugins_url(
-				'rtc-slider/' . $file_path,
-				dirname( __FILE__ )
-			);
+			$full_url = plugin_dir_url( __FILE__ ) . $file_path;
 		}
 		return $full_url;
 	}
