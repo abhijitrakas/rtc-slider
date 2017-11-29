@@ -2,7 +2,7 @@
 Just Simple Slider!
 
 [![Build Status](https://travis-ci.org/abhijitrakas/rtc-slider.svg?branch=master)](https://travis-ci.org/abhijitrakas/rtc-slider)
-[![Coverage Status](https://coveralls.io/repos/github/abhijitrakas/rtc-slider/badge.svg)](https://coveralls.io/github/abhijitrakas/rtc-slider)
+[![Coverage Status](https://coveralls.io/repos/github/abhijitrakas/rtc-slider/badge.svg?branch=master)](https://coveralls.io/github/abhijitrakas/rtc-slider?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/989e77801c9b704becc0/maintainability)](https://codeclimate.com/github/abhijitrakas/rtc-slider/maintainability)
 
 ## Getting Started
