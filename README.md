@@ -1,6 +1,9 @@
 # rtc-slider
 Just Simple Slider!
 
+[![Build Status](https://travis-ci.org/abhijitrakas/rtc-slider.svg?branch=master)](https://travis-ci.org/abhijitrakas/rtc-slider)
+[![Coverage Status](https://coveralls.io/repos/github/abhijitrakas/rtc-slider/badge.svg?branch=master)](https://coveralls.io/github/abhijitrakas/rtc-slider?branch=master)
+
 ## Getting Started
 Clone it in your WordPress set up 'plugins' directory. Then go to 'Plugins' section and activate plugin. As soon as plugin activated 'Rtc Slider' menu is display below 'Setting' menu in WordPress backend.
 
