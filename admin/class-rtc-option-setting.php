@@ -177,7 +177,7 @@ class Rtc_Option_Setting extends Rtc_Slider_Query {
 			]
 		);
 
-	}
+	} // @codeCoverageIgnore
 
 	/**
 	 * Function to get all slider iamges with styles

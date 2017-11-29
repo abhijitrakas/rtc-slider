@@ -134,8 +134,22 @@ class RtcSliderQueryTest extends WP_UnitTestCase {
     public function test_rtc_slider_get_media_from_obj() {
         // checking funciton is exist
         $this->assertTrue( method_exists( $this->rtcQueryBuilder, 'rtc_slider_get_media_from_obj' ) );
+        $data1 = $this->factory->attachment->create_and_get();
+        $data2 = $this->factory->attachment->create_and_get();
+        $wpposts = new WP_Query( [ 'post_type' => 'attachment' ] );
+        $wpposts->posts[0] = $data1;
+        $wpposts->posts[1] = $data2;
+        $wpposts->post_count = 2;
+        $requiredArray = [
+            $data1->ID => $data1->guid,
+            $data2->ID => $data2->guid,
+        ];
         // check for empty.
         $this->assertEmpty( $this->rtcQueryBuilder->rtc_slider_get_media_from_obj( '' ) );
+        // check for not empty.
+        $this->assertNotEmpty( $this->rtcQueryBuilder->rtc_slider_get_media_from_obj( $wpposts ) );
+        // check for reuired data and out is equal.
+        $this->assertEquals( $requiredArray, $this->rtcQueryBuilder->rtc_slider_get_media_from_obj( $wpposts ) );
     }
 
     /**
