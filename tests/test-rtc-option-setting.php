@@ -62,6 +62,10 @@ class PluginSettingOptionTest extends WP_UnitTestCase {
 		$this->assertTrue( ! empty( $GLOBALS['admin_page_hooks']['rtc-slider-setting.php'] ) );
 		// menu option page content
 		$this->assertTrue( method_exists( $this->rtcMenuClsObj, 'rtc_slider_page' ) );
+
+		$this->setOutputCallback(function() {});
+		$this->expectOutputString( $this->rtcMenuClsObj->rtc_slider_page() );
+		print $this->rtcMenuClsObj->rtc_slider_page();
     }
 
     /**
@@ -108,6 +112,26 @@ class PluginSettingOptionTest extends WP_UnitTestCase {
 		$this->assertEquals( $rquiredStr, $this->rtcMenuClsObj->rtc_get_image_wrapper($image_id, $media_link) );
 		// check string not equals.
 		$this->assertNotEquals( $rquiredStr, $this->rtcMenuClsObj->rtc_get_image_wrapper( 12, $media_link) );
+	}
+
+	/**
+	 * Test to chech render images data.
+	 */
+	public function test_render_all_selected_images_html() {
+		$this->assertTrue( method_exists( $this->rtcMenuClsObj, 'render_all_selected_images_html' ) );
+		$imgArray[] = [ 'id' => 1, 'link' => 'http://www.gstatic.com/webp/gallery/1.jpg' ];
+		$imgArray[] = [ 'id' => 2, 'link' => 'http://www.gstatic.com/webp/gallery/2.jpg' ];
+		$imgArray[] = [ 'id' => 3, 'link' => 'http://www.gstatic.com/webp/gallery/3.jpg' ];
+		$imgArray[] = [ 'id' => 4, 'link' => 'http://www.gstatic.com/webp/gallery/4.jpg' ];
+
+		$testOutput = '<li class="rtc-slide-thumb or-spacer" data-img-id="1"><div class="rtc-slide-row"><input type="checkbox" class="rtc-slider-remove"></div><div class="rtc-slide-row"><img class="rtc-full-wd" src="http://www.gstatic.com/webp/gallery/1.jpg"><div class="mask"></div><div></li><li class="rtc-slide-thumb or-spacer" data-img-id="2"><div class="rtc-slide-row"><input type="checkbox" class="rtc-slider-remove"></div><div class="rtc-slide-row"><img class="rtc-full-wd" src="http://www.gstatic.com/webp/gallery/2.jpg"><div class="mask"></div><div></li><li class="rtc-slide-thumb or-spacer" data-img-id="3"><div class="rtc-slide-row"><input type="checkbox" class="rtc-slider-remove"></div><div class="rtc-slide-row"><img class="rtc-full-wd" src="http://www.gstatic.com/webp/gallery/3.jpg"><div class="mask"></div><div></li><li class="rtc-slide-thumb or-spacer" data-img-id="4"><div class="rtc-slide-row"><input type="checkbox" class="rtc-slider-remove"></div><div class="rtc-slide-row"><img class="rtc-full-wd" src="http://www.gstatic.com/webp/gallery/4.jpg"><div class="mask"></div><div></li>';
+
+		$this->assertEquals(
+			$testOutput,
+			$this->rtcMenuClsObj->render_all_selected_images_html(
+				$imgArray
+			)
+		);
 	}
 
 }

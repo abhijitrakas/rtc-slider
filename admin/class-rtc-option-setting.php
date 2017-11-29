@@ -167,7 +167,6 @@ class Rtc_Option_Setting extends Rtc_Slider_Query {
 						'success' => true,
 					]
 				);
-				wp_die();
 			}
 		}
 		wp_send_json_success(
@@ -177,7 +176,7 @@ class Rtc_Option_Setting extends Rtc_Slider_Query {
 				'success' => false,
 			]
 		);
-		wp_die();
+
 	}
 
 	/**
@@ -190,12 +189,8 @@ class Rtc_Option_Setting extends Rtc_Slider_Query {
 	public function rtc_slider_get_images_wrapper( $get_option = 'rtc_slider_images' ) {
 		// getting all slider images from database.
 		$all_slider_images = $this->rtc_slider_images_url( $get_option );
-		$html              = '';
-		foreach ( $all_slider_images as $key => $slider_image ) {
-			// combining all slider images to display on setting page.
-			$html .= $this->rtc_get_image_wrapper( $slider_image['id'], $slider_image['link'] );
-		}
-		return $html;
+		// render html.
+		return $this->render_all_selected_images_html( $all_slider_images );
 	}
 
 	/**
@@ -211,6 +206,24 @@ class Rtc_Option_Setting extends Rtc_Slider_Query {
 			return '<li class="rtc-slide-thumb or-spacer" data-img-id="' . $image_id . '"><div class="rtc-slide-row"><input type="checkbox" class="rtc-slider-remove"></div><div class="rtc-slide-row"><img class="rtc-full-wd" src="' . $media_link . '"><div class="mask"></div><div></li>';
 		}
 		return '';
+	}
+
+	/**
+	 * Function to get all selected iamges html
+	 *
+	 * @access public
+	 * @param  array $images // array of images.
+	 * @return text
+	 */
+	public function render_all_selected_images_html( $images = [] ) {
+		$html = '';
+		if ( ! empty( $images ) ) {
+			foreach ( $images as $key => $slider_image ) {
+				// combining all slider images to display on setting page.
+				$html .= $this->rtc_get_image_wrapper( $slider_image['id'], $slider_image['link'] );
+			}
+		}
+		return $html;
 	}
 
 }

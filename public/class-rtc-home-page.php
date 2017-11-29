@@ -90,12 +90,7 @@ class Rtc_Home_Page extends Rtc_Slider_Query {
 	 * @return text
 	 */
 	public function rtc_slider_loading() {
-		return (
-			'<!-- Loading Screen -->
-            <div data-u="loading" class="jssorl-009-spin">
-                <img class="jssor-loader" src="' . $this->get_file_url( 'lib/jssor/assets/svg/ball-triangle.svg' ) . '" />
-            </div>'
-		);
+		return ( '<!-- Loading Screen --> <div data-u="loading" class="jssorl-009-spin"> <img class="jssor-loader" src="' . $this->get_file_url( 'lib/jssor/assets/svg/ball-triangle.svg' ) . '" /> </div>' );
 	}
 
 	/**

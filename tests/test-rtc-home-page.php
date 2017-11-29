@@ -151,4 +151,32 @@ class RtcHomePageTest extends WP_UnitTestCase {
 		$this->assertNotEmpty( $this->homePage->load_all_images() );
 	}
 
+	/**
+	 * Test to check loader image loading properly
+	 */
+	public function test_rtc_slider_loading() {
+		$loader = '<!-- Loading Screen --> <div data-u="loading" class="jssorl-009-spin"> <img class="jssor-loader" src="' . $this->homePage->get_file_url('lib/jssor/assets/svg/ball-triangle.svg'). '" /> </div>';
+
+		$this->assertEquals( $loader, $this->homePage->rtc_slider_loading() );
+	}
+
+	/**
+	 * Test to check slider loading properly
+	 */
+	public function test_rtc_load_slider()
+	{
+		$loader =
+			'<div>
+                <div id="jssor_1">' .
+					$this->homePage->rtc_slider_loading() .
+					$this->homePage->load_all_images() .
+					$this->homePage->rtc_slider_bullets() .
+					$this->homePage->rtc_slider_left_arrows() .
+					$this->homePage->rtc_slider_right_arrows() .
+				'</div>
+            </div>';
+
+		$this->assertEquals( $loader, $this->homePage->rtc_load_slider() );
+	}
+
 }
